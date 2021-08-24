@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/buyi-web/TypeScript-learn/issues"
   },
-  "homepage": "https://github.com/buyi-web/TypeScript-learn#readme"
+  "homepage": "https://github.com/buyi-web/TypeScript-learn#readme",
+  "devDependencies": {
+    "@types/node": "^16.7.1"
+  }
 }
