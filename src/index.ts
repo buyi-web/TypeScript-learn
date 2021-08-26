@@ -10,3 +10,11 @@ function combine(a:number|string, b: number|string): number|string {
         throw new Error("params type error");
     }
 }
+
+enum Sex{
+    male = '男',
+    famale = '女'
+}
+
+
+let sex1: Sex = Sex.male
