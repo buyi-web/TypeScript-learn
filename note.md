@@ -21,7 +21,8 @@
 ```json
 {
     "compilerOptions": {
-        "target": "es2016"
+        "target": "es5",
+        "strictNullChecks": "true", //更加严格的空类型检查
     }
 }
 ```
@@ -32,3 +33,75 @@
 
 >jQuery：用js写的，没有类型检查
 >安装@types/jquery，为jQuery库添加类型定义
+
+### 类型
+
+基本类型：
+
+- number
+- string
+- boolean
+- number[] 或者 `Array<number>`
+- object
+
+其他类型：
+
+- void类型：通常用于约束函数的返回值，表示该函数没有任何返回
+
+- nerver类型：通常用于约束函数的返回值， 表示该函数永远不会结束
+
+```ts
+function fn(): nerver {
+    while (true) {
+        ...
+    }
+}
+```
+
+- 字面量类型：使用一个值进行约束
+
+```ts
+let sex: "男"|"女"
+```
+
+- 元组类型（Tuple）：一个固定长度的数组，并且数组每一项的类型确定
+
+```ts
+let arr: [number, string, boolean] = [1, "2", false]
+```
+
+- any类型：any类型会绕过类型检查，any类型可以赋值给任意类型
+
+### 类型别名
+
+对已知的类型定义名称
+
+`type 类型名称 =  ...`
+
+```ts
+type User = {
+    name: string,
+    sex: "男"|"女",
+    age: number
+}
+```
+
+### 函数的约束
+
+函数重载：在函数实现之前，对函数调用的多种情况进行声明
+
+```TypeScript
+function combine(a:number, b: number):number;
+function combine(a:string, b: string):string;
+function combine(a:number|string, b: number|string): number|string {
+    if(typeof a === 'number' && typeof b === 'number') {
+        return a * b
+    }else if(typeof a === 'string' && typeof b === 'string'){
+        return a + b
+    }else {
+        throw new Error("params type error");
+    }
+}
+```
+
+可选参数：可以下某些参数后面加上`?`表示该参数可以不用传递，可选参数只能出现在函数参数列表最后
