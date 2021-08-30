@@ -1,5 +1,7 @@
 # TypeScript
 
+[中文文档](https://www.tslang.cn/docs/home.html)
+
 ## JS开发中的问题
 
 - js语义本身的特性，决定了该语言无法适应大型项复杂的项目
@@ -150,3 +152,10 @@ let sex1: Sex = Sex.male
 
 - 枚举的字段值可以是字符串和数字
 - 数字枚举值会自动自增
+
+## 接口和类型兼容性
+
+typescript的接口：用于约束类，对象，函数的契约（标准）
+
+
+
