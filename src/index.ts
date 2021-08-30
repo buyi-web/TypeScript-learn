@@ -1,5 +1,8 @@
+import { Dictionary } from "./dictionary";
 
-function fn <T>(arr: T[], n: number): T[] {
-    const res = arr.slice(0, n)
-    return res
-}
+const dict = new Dictionary<string, number>();
+
+dict.set('a', 11);
+dict.set('b', 22)
+
+console.log(dict);
